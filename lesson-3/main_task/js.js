@@ -9,6 +9,7 @@ function start() {
 	}
 };
 
+start();
 
 let appData = {
 	budget: money,
@@ -33,12 +34,14 @@ function chooseExpenses() {
   }
 };
 
+chooseExpenses();
 
 function detectDayBudget() {
 	appData.moneyPerDay = (appData.budget / 30).toFixed();
 	alert(`Ежедневный бюджет: ${appData.moneyPerDay}`);
 };
 
+detectDayBudget();
 
 function detectLevel() {
 	if (appData.moneyPerDay < 100) {
@@ -52,7 +55,7 @@ function detectLevel() {
 	}
 };
 
-
+detectLevel();
 
 function checkSavings() {
 	if (appData.savings === true) {
@@ -74,5 +77,4 @@ function chooseOptExpenses() {
 	}
 };
 
-
-console.log(appData);
+chooseOptExpenses();

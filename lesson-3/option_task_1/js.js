@@ -2,31 +2,30 @@ let str = 'урок-3-был слишком легким';
 
 let newStr = str[0].toUpperCase() + str.slice(1).replace(/-/g, ' ');
 console.log(newStr);
-let newStr1 = newStr.split(' ').splice(4,1).join().split('');
-newStr1.pop();
-newStr1.pop();
-newStr1.push('о','о');
-let newStr2 = newStr1.join('');
-console.log(newStr2)
-
+let newStr1 = newStr.split(' ').splice(4,1).join();
+newStr1 = newStr1.replace('им', 'о');
+console.log(newStr1);
 
 /////////////////////////////////////////
 
-/*let arr = [20, 33, 1, 'Человек', 2, 3];
-arr.splice(3,1);
+let arr = [20, 33, 1, 'Человек', 2, 3];
 
-let newArr = [],
-count = 0;
+let newArr = [];
 
 for (let i = 0; i < arr.length; i++) {
-	(newArr.push(arr[i]**3));
+	if (typeof arr[i] === 'string') {
+		continue;
+  } else {
+  	newArr.push(arr[i]**3);
+  }
 }
 
-for (let i = 0; i < newArr.length; i++) {
-	count += newArr[i];
-}
+let sum = newArr.reduce(function(i, item){
+	return i + item;
+});
 
-console.log(Math.sqrt(count))
+console.log(Math.sqrt(sum));
+
 
 /////////////////////////////////////////
 
@@ -38,4 +37,4 @@ function fu(a) {
 	}
 }
 
-fu(' vffvf ')*/
+fu(' dsfdsf ')
