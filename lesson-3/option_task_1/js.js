@@ -2,9 +2,11 @@ let str = 'урок-3-был слишком легким';
 
 let newStr = str[0].toUpperCase() + str.slice(1).replace(/-/g, ' ');
 console.log(newStr);
-let newStr1 = newStr.split(' ').splice(4,1).join();
-newStr1 = newStr1.replace('им', 'о');
-console.log(newStr1);
+newStr1 = newStr.split(' ').splice(4,1).join();
+console.log(newStr)
+console.log(newStr1)
+//newStr1 = newStr1.replace('им', 'о');
+//console.log(newStr1);
 
 /////////////////////////////////////////
 
@@ -34,7 +36,10 @@ function fu(a) {
 		console.log('Введена не строка')
 	} else {
 		console.log(a.trim());
-	}
-}
+	} if (a.length > 50) {
+    a = a.slice(1,50) + '...';
+    return a
+  }
+};
 
-fu(' dsfdsf ')
+fu('1234567891011121314151617181920212223242526272829303123343536373839404142434445464748495051525354')
