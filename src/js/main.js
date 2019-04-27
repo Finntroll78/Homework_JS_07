@@ -1,34 +1,35 @@
 let startBtn = document.getElementById('start'),
-    budgetValue = document.getElementById('budget-value'),
-    daybudgetValue = document.getElementById('daybudget-value'),
-    levelValue = document.getElementById('level-value'),
-    expensesValue = document.getElementById('expenses-value'),
-    optionalExpensesValue = document.getElementById('optionalexpenses-value'),
-    incomValue = document.getElementById('income-value'),
-    monthsavingsValue = document.getElementById('monthsavings-value'),
-    yearsavingsValue = document.getElementById('yearsavings-value'),
+    budgetValue = document.getElementsByClassName('budget-value'),//доход
+    daybudgetValue = document.getElementsByClassName('daybudget-value'),//Бюджет на 1 день
+    levelValue = document.getElementsByClassName('level-value'),//Уровень дохода
+    expensesValue = document.getElementsByClassName('expenses-value'),//Обязательные расходы
+    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value'),//Возможные траты
+    incomValue = document.getElementsByClassName('income-value'),//Дополнительный доход
+    monthsavingsValue = document.getElementsByClassName('monthsavings-value'),//Накопления за 1 месяц
+    yearsavingsValue = document.getElementsByClassName('yearsavings-value'),//Накопления за 1 год
 
     //обязательные расходы:
-    expenseItem = document.getElementsByClassName('expenses-item'),
+    expenseItem = document.querySelectorAll('.expenses-item'),
 
     //кнопки:
-    optionalexpensesBtn = document.querySelector('.optionalexpenses-btn'),
-    countBudgetBtn = document.querySelector('.count-budget-btn'),
+    expensesItemBtn = document.getElementsByTagName('expenses-item-btn'),//утвердить обязательные расходы
+    optionalExpensesBtn = document.getElementsByTagName('optionalexpenses-btn'),//утвердить необязательные расходы
+    countBudgetBtn = document.getElementsByTagName('count-budget-btn'),//Расчет дневного бюджета
 
     //поля необязательных расходов:
-    optionalexpenseItem = document.querySelectorAll('optionalexpenses-item'),
+    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
 
     //статьи возможного дохода:
-    choosIncome = document.querySelector('.choose-income'),
+    choosIncome = document.getElementById('income'),//статьи возможного дохода 
 
     //Чекбокс:
-    savings = document.querySelector('.savings'),
+    savings = document.getElementById('savings'),//накопления
 
     //Сумма:
-    chooseSum = document.querySelector('.sum'),
+    chooseSum = document.getElementById('sum'),//сумма
 
     //Процент:
-    choosPercent = document.querySelector('.percent'),
+    choosPercent = document.getElementById('percent'),//процент
 
     //Год:
     yearValue = document.querySelector('.year-value'),
@@ -39,23 +40,25 @@ let startBtn = document.getElementById('start'),
     //День:
     dayValue = document.querySelector('.day-value');
 
-    console.log(startBtn);
-    console.log(budgetValue);
-    console.log(daybudgetValue);
-    console.log(levelValue);
-    console.log(expensesValue);
-    console.log(optionalExpensesValue);
-    console.log(incomValue);
-    console.log(monthsavingsValue);
-    console.log(yearsavingsValue);
-    console.log(expenseItem);
-    console.log(optionalexpensesBtn);
-    console.log(countBudgetBtn);
-    console.log(optionalexpenseItem);
-    console.log(choosIncome);
-    console.log(savings);
-    console.log(chooseSum);
-    console.log(choosPercent);
-    console.log(yearValue);
-    console.log(montValue);
-    console.log(dayValue);
+    console.log(startBtn)
+    console.log(budgetValue)
+    console.log(daybudgetValue)
+    console.log(levelValue)
+    console.log(expensesValue)
+    console.log(optionalExpensesValue)
+    console.log(incomValue)
+    console.log(incomValue)
+    console.log(monthsavingsValue)
+    console.log(yearsavingsValue)
+    console.log(expenseItem)
+    console.log(optionalExpensesBtn)
+    console.log(countBudgetBtn)
+    console.log(optionalExpensesItem)
+    console.log(choosIncome)
+    console.log(savings)
+    console.log(chooseSum)
+    console.log(choosPercent)
+    console.log(yearValue)
+    console.log(montValue)
+    console.log(dayValue)
+
