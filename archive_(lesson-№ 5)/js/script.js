@@ -13,8 +13,11 @@ menuItem.classList.add('menu-item'); //добавил класс элемент�
 bodyBg[0].style.backgroundImage = 'url(img/apple_true.jpg)'; //подключил бэкграунд
 title.innerHTML = 'Мы продаем только подлинную технику Apple'; //поменял заголовок
 column[1].removeChild(adv[0]); //удалил рекламу
-menuItemLi[1].innerHTML = 'Второй пункт';
-menuItemLi[2].innerHTML = 'Третий пункт';
+
+let secondChild = menuItemLi[2];
+let thirdChild = menuItemLi[1];
+
+classMenu.insertBefore(secondChild,thirdChild);
 
 ask = prompt('Как Вы относитесь к технике Apple?', '');
 
