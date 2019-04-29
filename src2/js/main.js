@@ -8,12 +8,12 @@ let startBtn = document.getElementById('start'),
     monthsavingsValue = document.querySelector('.monthsavings-value'), //Накопления за 1 месяц
     yearsavingsValue = document.querySelector('.yearsavings-value'), //Накопления за 1 год
 
-    expensesItem = document.querySelectorAll('.expenses-item'), //обязательные расходы
+    expensesItem = document.getElementsByClassName('expenses-item'), //обязательные расходы
 
     //кнопки:
-    expensesItemBtn = document.querySelector('.expenses-item-btn'), //утвердить обязательные расходы
-    optionalExpensesBtn = document.querySelector('.optionalexpenses-btn'), //утвердить необязательные расходы
-    countBudgetBtn = document.querySelector('.count-budget-btn'), //Расчет дневного бюджета
+    expensesItemBtn = document.getElementsByTagName('button')[0], //утвердить обязательные расходы
+    optionalExpensesBtn = document.getElementsByTagName('button')[1], //утвердить необязательные расходы
+    countBudgetBtn = document.getElementsByTagName('button')[2], //Расчет дневного бюджета
 
     optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'), //поля необязательных расходов
 
@@ -35,8 +35,8 @@ let startBtn = document.getElementById('start'),
 
 
 startBtn.addEventListener('click', function() {
-    time = prompt('Введите дату в формате YYYY-MM-DD', ''),
-        money = +prompt('Ваш бюджет на месяц', '');
+    time = prompt('Введите дату в формате YYYY-MM-DD', '');
+    money = +prompt('Ваш бюджет на месяц', '');
 
     while (isNaN(money) || money === '' || money === null) {
         money = +prompt('Ваш бюджет?', '');
@@ -61,7 +61,7 @@ expensesItemBtn.addEventListener('click', function() {
             appData.expenses[a] = b;
             sum += +b;
         } else {
-            i--;
+          expensesItemBtn.disabled = true;
         }
     }
     expensesValue.textContent = sum;
@@ -72,7 +72,9 @@ optionalExpensesBtn.addEventListener('click', function() {
         let opt = optionalExpensesItem[i].value;
         appData.optionalExpenses[i] = opt;
         optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
+
     }
+
 });
 
 countBudgetBtn.addEventListener('click', function() {
@@ -145,3 +147,6 @@ let appData = {
     income: [],
     savings: false,
 };
+
+console.log(appData)
+
