@@ -1,44 +1,36 @@
 let startBtn = document.getElementById('start'),
-    budgetValue = document.getElementsByClassName('budget-value'),//доход
-    daybudgetValue = document.getElementsByClassName('daybudget-value'),//Бюджет на 1 день
-    levelValue = document.getElementsByClassName('level-value'),//Уровень дохода
-    expensesValue = document.getElementsByClassName('expenses-value'),//Обязательные расходы
-    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value'),//Возможные траты
-    incomValue = document.getElementsByClassName('income-value'),//Дополнительный доход
-    monthsavingsValue = document.getElementsByClassName('monthsavings-value'),//Накопления за 1 месяц
-    yearsavingsValue = document.getElementsByClassName('yearsavings-value'),//Накопления за 1 год
+    budgetValue = document.querySelector('.budget-value'), //доход
+    daybudgetValue = document.querySelector('.daybudget-value'), //Бюджет на 1 день
+    levelValue = document.querySelector('.level-value'), //Уровень дохода
+    expensesValue = document.querySelector('.expenses-value'), //Обязательные расходы
+    optionalExpensesValue = document.querySelector('.optionalexpenses-value'), //Возможные траты
+    incomValue = document.querySelector('.income-value'), //Дополнительный доход
+    monthsavingsValue = document.querySelector('.monthsavings-value'), //Накопления за 1 месяц
+    yearsavingsValue = document.querySelector('.yearsavings-value'), //Накопления за 1 год
 
-    //обязательные расходы:
-    expenseItem = document.querySelectorAll('.expenses-item'),
+    expensesItem = document.querySelectorAll('.expenses-item'), //обязательные расходы
 
     //кнопки:
-    expensesItemBtn = document.getElementsByTagName('expenses-item-btn'),//утвердить обязательные расходы
-    optionalExpensesBtn = document.getElementsByTagName('optionalexpenses-btn'),//утвердить необязательные расходы
-    countBudgetBtn = document.getElementsByTagName('count-budget-btn'),//Расчет дневного бюджета
+    expensesItemBtn = document.querySelector('.expenses-item-btn'), //утвердить обязательные расходы
+    optionalExpensesBtn = document.querySelector('.optionalexpenses-btn'), //утвердить необязательные расходы
+    countBudgetBtn = document.querySelector('.count-budget-btn'), //Расчет дневного бюджета
+    
 
-    //поля необязательных расходов:
-    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
+    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'), //поля необязательных расходов
 
-    //статьи возможного дохода:
-    choosIncome = document.getElementById('income'),//статьи возможного дохода 
+    choosIncome = document.querySelector('.choose-income'), //статьи возможного дохода 
 
-    //Чекбокс:
-    savings = document.getElementById('savings'),//накопления
+    checkSavings = document.querySelector('#savings'), //Чекбокс
 
-    //Сумма:
-    chooseSum = document.getElementById('sum'),//сумма
+    chooseSum = document.querySelector('.choose-sum'), //Сумма
 
-    //Процент:
-    choosPercent = document.getElementById('percent'),//процент
+    choosPercent = document.querySelector('.choose-percent'), //Процент
 
-    //Год:
-    yearValue = document.querySelector('.year-value'),
+    yearValue = document.querySelector('.year-value'), //Год
 
-    //Месяц:
-    montValue = document.querySelector('.month-value'),
+    montValue = document.querySelector('.month-value'), //Месяц
 
-    //День:
-    dayValue = document.querySelector('.day-value');
+    dayValue = document.querySelector('.day-value'); //День
 
     console.log(startBtn)
     console.log(budgetValue)
@@ -50,7 +42,7 @@ let startBtn = document.getElementById('start'),
     console.log(incomValue)
     console.log(monthsavingsValue)
     console.log(yearsavingsValue)
-    console.log(expenseItem)
+    console.log(expensesItem)
     console.log(optionalExpensesBtn)
     console.log(countBudgetBtn)
     console.log(optionalExpensesItem)
