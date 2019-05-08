@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function() {
     			if (target == tab[i]) {
     				hideTabContent(0);
     				showTabContent(i);
-    				breack;
+    				break;
     			}
     		}
     	}
