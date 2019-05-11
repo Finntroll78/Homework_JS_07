@@ -36,13 +36,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Timer
 
-    let deadLine = '2019-10-21';
+    let deadLine = '2019-05-11';
 
     function getTimeRemaining(endtime) {
-        let t = Date.parse(endtime) - Date.parse(new Date()),
-            seconds = Math.floor((t / 1000) % 60),
-            minutes = Math.floor((t / 1000 / 60) % 60),
-            hours = Math.floor((t / (1000 * 60 * 60)));
+        let t = Date.parse(endtime) - Date.parse(new Date());
+
+        if (t <= 0) {
+            t = 0;
+        };
+
+        let seconds = Math.floor((t / 1000) % 60).toString(),
+            minutes = Math.floor((t / 1000 / 60) % 60).toString(),
+            hours = Math.floor((t / (1000 * 60 * 60))).toString();
 
         return {
             'total': t,
@@ -56,14 +61,26 @@ window.addEventListener('DOMContentLoaded', function() {
         let timer = document.getElementById(id),
             hours = timer.querySelector('.hours'),
             minutes = timer.querySelector('.minutes'),
-            seconds = timer.querySelector('.seconds');
+            seconds = timer.querySelector('.seconds'),
+            timeInterval = setInterval(updateClock, 1000);
 
         function updateClock() {
             let t = getTimeRemaining(endtime);
             hours.textContent = t.hours;
             minutes.textContent = t.minutes;
             seconds.textContent = t.seconds;
-            timeInterval = setInterval(updateClock, 1000);
+
+            if (t.hours.length < 2) {
+                hours.textContent = '0' + t.hours;
+            };
+
+            if (t.minutes.length < 2) {
+                minutes.textContent = '0' + t.minutes;
+            };
+
+            if (t.seconds.length < 2) {
+                seconds.textContent = '0' + t.seconds;
+            };
 
             if (t.total <= 0) {
                 clearInterval(timeInterval);
