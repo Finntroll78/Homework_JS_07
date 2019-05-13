@@ -10,12 +10,20 @@ class Options {
     
     newDiv() {
     	let div = document.createElement('div');
+    	div.style.cssText = `height: ${this.height}px;
+    	width: ${this.width}px; 
+    	background-color: ${this.bg};
+    	font-size: ${this.fontSize}px;
+    	text-align: ${this.textAlign};
+    	`;
     	div.innerHTML = '<p>Привет!</<p>';
     	document.body.insertBefore(div, document.body.firstChild);
-    	// return div;
     }
 }
 
-let box = new Options;
-box.newDiv() 
+let box = new Options(100,100,'red',20,'center');
+box.newDiv();
+
+let box2 = new Options(200,200,'red',20,'center');
+box2.newDiv();
 

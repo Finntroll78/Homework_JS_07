@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', function() {
         close = document.querySelector('.popup-close'),
         descriptionBtn = document.querySelectorAll('.description-btn');
 
-    more.addEventListener('click', () => {//заменил на стр. ф-цию
+    more.addEventListener('click', function() {
         overLay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
@@ -108,13 +108,12 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     });
 
-    for (let i = 0; i < descriptionBtn.length; i++) {
-        descriptionBtn[i].addEventListener('click', () => {//заменил на стр. ф-цию
+    descriptionBtn.forEach(item => {
+        item.addEventListener('click', function() {
             overLay.style.display = 'block';
             this.classList.add('more-splash');
             document.body.style.overflow = 'hidden';
-        })
-    }
-
+        });
+    });
 
 });

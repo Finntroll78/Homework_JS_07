@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function() {
         tabContent = document.querySelectorAll('.info-tabcontent');
 
 
-    function hideTabContent(a) {
+    let hideTabContent = (a) => {//стрелочные ф-ции
         for (let i = a; i < tabContent.length; i++) {
             tabContent[i].classList.remove('show');
             tabContent[i].classList.add('hide');
@@ -15,14 +15,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
     hideTabContent(1);
 
-    function showTabContent(b) {
+    let showTabContent = (b) => {//стрелочные ф-ции
         if (tabContent[b].classList.contains('hide')) {
             tabContent[b].classList.remove('hide');
             tabContent[b].classList.add('show');
         }
     }
 
-    info.addEventListener('click', function(event) {
+    info.addEventListener('click', (event) => {//стрелочные ф-ции
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')) {
             for (let i = 0; i < tab.length; i++) {
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Timer
 
-    let deadLine = '2019-05-11';
+     let deadLine = '2019-05-14';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date());
@@ -96,25 +96,24 @@ window.addEventListener('DOMContentLoaded', function() {
         close = document.querySelector('.popup-close'),
         descriptionBtn = document.querySelectorAll('.description-btn');
 
-    more.addEventListener('click', function() {
+    more.addEventListener('click', () => {//добавил стрелочные ф-ции
         overLay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
     });
 
-    close.addEventListener('click', function() {
+    close.addEventListener('click', () => {//добавил стрелочные ф-ции
         overLay.style.display = 'none';
         more.classList.remove('more-splash');
         document.body.style.overflow = '';
     });
 
-    for (let i = 0; i < descriptionBtn.length; i++) {
-        descriptionBtn[i].addEventListener('click', function() {
+    for (let i = 0; i < descriptionBtn.length; i++) {//добавил стрелочные ф-ции
+        descriptionBtn[i].addEventListener('click', () => {
             overLay.style.display = 'block';
             this.classList.add('more-splash');
             document.body.style.overflow = 'hidden';
         })
     }
-
 
 });
